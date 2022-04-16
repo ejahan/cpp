@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/04/16 15:54:49 by ejahan            #+#    #+#              #
-#    Updated: 2022/04/16 20:47:29 by ejahan           ###   ########.fr        #
+#    Created: 2022/04/16 20:54:26 by ejahan            #+#    #+#              #
+#    Updated: 2022/04/16 20:58:55 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	megaphone.cpp
+SRCS		=	main.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
