@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 20:54:23 by ejahan            #+#    #+#             */
-/*   Updated: 2022/04/25 00:12:28 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/04/25 00:48:52 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	check_contact(PhoneBook *pb)
 		|| pb->contact[pb->nb_of_contact].darkest_secret == "")
 	{
 		std::cout << std::endl;
-		std::cout << "error : at least one information is missing" << std::endl;
+		std::cout << "ERROR : at least one information is missing" << std::endl;
 		return (-1);
 	}
 	return (0);
@@ -80,6 +80,7 @@ void	search_index(PhoneBook *phonebook)
 
 	std::cout << std::endl << "index : ";
 	std::getline(std::cin, index);
+	std::cout << std::endl;
 	if (index == "1" && phonebook->contact[0].exist == 1)
 		print_contact(phonebook->contact[0]);
 	else if (index == "2" && phonebook->contact[1].exist == 1)
@@ -97,7 +98,35 @@ void	search_index(PhoneBook *phonebook)
 	else if (index == "8" && phonebook->contact[7].exist == 1)
 		print_contact(phonebook->contact[7]);
 	else
-		std::cout << "You gave a wrong index" << std::endl;
+		std::cout << "ERROR : You gave a wrong index" << std::endl;
+}
+
+void	print_index_contact(std::string str, int i)
+{
+	int	j;
+
+	j = 0;
+	if (str.length() > 10)
+	{
+		while (j < 9)
+		{
+			std::cout << str[j];
+			j++;
+		}
+		std::cout << ".";
+	}
+	else if (str.length() == 10)
+		std::cout << str;
+	else
+	{
+		j = 10 - str.length();
+		while (j > 0)
+		{
+			std::cout << " ";
+			j--;
+		}
+		std::cout << str;
+	}
 }
 
 void	phonebook_search(PhoneBook *phonebook)
@@ -116,7 +145,12 @@ void	phonebook_search(PhoneBook *phonebook)
 	while (phonebook->contact[i].exist == 1)
 	{
 		std::cout << "         " << i + 1 << "|";
-		std::cout << "      test|      test|      test" << std::endl;
+		print_index_contact(phonebook->contact[i].first_name, i);
+		std::cout << "|";
+		print_index_contact(phonebook->contact[i].last_name, i);
+		std::cout << "|";
+		print_index_contact(phonebook->contact[i].nickname, i);
+		std::cout << std::endl;
 		i++;
 	}
 	search_index(phonebook);
