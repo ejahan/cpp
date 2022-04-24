@@ -6,7 +6,7 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/16 20:54:26 by ejahan            #+#    #+#              #
-#    Updated: 2022/04/16 20:58:55 by ejahan           ###   ########.fr        #
+#    Updated: 2022/04/24 14:25:12 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Werror -Wextra
 
-NAME		=	megaphone
+NAME		=	PhoneBook
 
 RM			=	rm -rf
 
