@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 16:44:22 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/02 00:32:22 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/03 01:20:32 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,11 @@
 class	Weapon
 {
 	private:
-		std::string	type;
+		std::string	_type;
 
 	public:
+		Weapon(std::string str);
+		~Weapon(void);
 		const std::string   &getType();
         void                setType(std::string str);
 };

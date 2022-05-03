@@ -6,11 +6,11 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/01 16:41:22 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/01 16:41:27 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/03 01:33:09 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	main.cpp 
+SRCS		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
