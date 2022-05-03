@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   replace_file.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/01 17:01:22 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/03 06:41:17 by ejahan           ###   ########.fr       */
+/*   Created: 2022/05/03 06:07:27 by ejahan            #+#    #+#             */
+/*   Updated: 2022/05/03 06:18:26 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "replace_file.hpp"
-#include <fstream>
 
-int	main(int ac, char **av)
+replace_file::replace_file(std::string filename, std::string s1, std::string s2) : 
+		_filename(filename), 
+		_s1(s1),
+		_s2(s2)
 {
-	std::string	file;
+	std::cout << "filename : " << this->_filename << std::endl;
+	std::cout << "s1 : " << this->_s1 << std::endl;
+	std::cout << "s2 : " << this->_s2 << std::endl;
+	return ;
+}
 
-	if (ac != 4)
-	{
-		std::cout << "wrong number of arguments" << std::endl;
-		return (-1);
-	}
-	std::string _filename = av[1];
-	std::string _s1 = av[2];
-	std::string _s2 = av[3];
-	std::ifstream	ifs(_filename);
-	ifs >> file;
-	ifs.close();
-	_filename += ".replace";
-	std::ofstream	ofs(_filename);
-	ofs << file << std::endl;
-	ofs.close();	
-	return (0);
+replace_file::~replace_file()
+{
+	return ;
 }
