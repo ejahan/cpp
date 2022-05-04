@@ -6,11 +6,11 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/01 17:03:34 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/01 17:03:53 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/04 03:10:33 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	main.cpp Harl.cpp Harl.hpp
+SRCS		=	main.cpp Harl.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
