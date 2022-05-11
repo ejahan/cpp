@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 05:19:51 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/05 07:09:28 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/12 01:18:23 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,17 @@
 class	Fixed
 {
 	private:
-		int	nb;
-		const int static	nb_bits = 8;
-	
+		int	_nb;
+		const int static	_nb_bits = 8;
+
 	public:
 		Fixed();
+		Fixed(Fixed const &rhs);
 		~Fixed();
 		int	getRawBits(void) const;
 		void	setRawBits(int const raw);
+		Fixed	&operator=(Fixed const &rhs);
+
 };
 
 #endif

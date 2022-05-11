@@ -6,11 +6,11 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 17:01:22 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/04 01:38:09 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/12 00:39:45 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace_file.hpp"
+#include <iostream>
 #include <fstream>
 #include <cstring>
 
