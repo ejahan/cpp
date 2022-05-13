@@ -5,16 +5,16 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/05/01 16:41:22 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/12 23:44:37 by ejahan           ###   ########.fr        #
+#    Created: 2022/05/13 01:12:49 by ejahan            #+#    #+#              #
+#    Updated: 2022/05/13 01:14:18 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	main.cpp Weapon.cpp HumanA.cpp HumanB.cpp
+SRCS		=	main.cpp Fixed.cpp
 
 OBJS		=	${SRCS:.cpp=.o}
 
-CC			=	clang++
+CC			=	c++
 
 CFLAGS		=	-Wall -Werror -Wextra
 
