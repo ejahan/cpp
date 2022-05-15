@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 03:01:54 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/13 04:45:17 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/15 02:04:20 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@ class	ClapTrap
 		void	attack(const std::string &target);
 		void	takeDamage(unsigned int amount);
 		void	beRepaired(unsigned int amount);
+
+		std::string	GetName(void);
+		int		GetEnergy(void);
+		int		GetHitPoints(void);
 
 };
 
