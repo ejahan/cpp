@@ -6,13 +6,13 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:21:38 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/15 05:10:40 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/16 04:14:17 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void)
+Dog::Dog(void) : Animal("Dog")
 {
 	std::cout << "A Dog has been created" << std::endl;
 	return ;

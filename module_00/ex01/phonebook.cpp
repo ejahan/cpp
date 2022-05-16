@@ -6,34 +6,41 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/16 20:54:23 by ejahan            #+#    #+#             */
-/*   Updated: 2022/04/26 00:49:32 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/16 03:34:26 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
-#include <iostream>
-#include <cstring>
 
-void	init_pb(PhoneBook *pb)
+PhoneBook::PhoneBook(void)
 {
-	pb->nb_of_contact = 0;
-	pb->contact[0].exist = 0;
-	pb->contact[1].exist = 0;
-	pb->contact[2].exist = 0;
-	pb->contact[3].exist = 0;
-	pb->contact[4].exist = 0;
-	pb->contact[5].exist = 0;
-	pb->contact[6].exist = 0;
-	pb->contact[7].exist = 0;
+	this->_nb_of_contact = 0;
+	return ;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	return ;
+}
+
+int	PhoneBook::Get_nb_of_contact(void)
+{
+	return (this->_nb_of_contact);
+}
+
+void	PhoneBook::incr_nb(void)
+{
+	this->_nb_of_contact++;
+	return ;
 }
 
 int	check_contact(PhoneBook *pb)
 {
-	if (pb->contact[pb->nb_of_contact].first_name == ""
-		|| pb->contact[pb->nb_of_contact].last_name == ""
-		|| pb->contact[pb->nb_of_contact].nickname == ""
-		|| pb->contact[pb->nb_of_contact].phone_number == ""
-		|| pb->contact[pb->nb_of_contact].darkest_secret == "")
+	if (pb->contact[pb->Get_nb_of_contact()].GetFirstName() == ""
+		|| pb->contact[pb->Get_nb_of_contact()].GetLastName() == ""
+		|| pb->contact[pb->Get_nb_of_contact()].GetNickName() == ""
+		|| pb->contact[pb->Get_nb_of_contact()].GetPhoneNumber() == ""
+		|| pb->contact[pb->Get_nb_of_contact()].GetDarkestSecret() == "")
 	{
 		std::cout << std::endl;
 		std::cout << "ERROR : at least one information is missing" << std::endl;
@@ -42,36 +49,13 @@ int	check_contact(PhoneBook *pb)
 	return (0);
 }
 
-void	phonebook_add(PhoneBook *pb)
-{
-	int	i;
-
-	i = 0;
-	std::cout << std::endl;
-	std::cout << "first name : ";
-	std::getline(std::cin, pb->contact[pb->nb_of_contact].first_name);
-	std::cout << "last name : ";
-	std::getline(std::cin, pb->contact[pb->nb_of_contact].last_name);
-	std::cout << "nickname : ";
-	std::getline(std::cin, pb->contact[pb->nb_of_contact].nickname);
-	std::cout << "phone number : ";
-	std::getline(std::cin, pb->contact[pb->nb_of_contact].phone_number);
-	std::cout << "darkest secret : ";
-	std::getline(std::cin, pb->contact[pb->nb_of_contact].darkest_secret);
-	if (pb->nb_of_contact < 7 && check_contact(pb) != -1)
-	{
-		pb->contact[pb->nb_of_contact].exist = 1;
-		pb->nb_of_contact = pb->nb_of_contact + 1;
-	}
-}
-
 void	print_contact(Contact contact)
 {
-	std::cout << "first_name : "<< contact.first_name << std::endl;
-	std::cout << "last name : "<< contact.last_name << std::endl;
-	std::cout << "nickname : "<< contact.nickname << std::endl;
-	std::cout << "phone number : "<< contact.phone_number << std::endl;
-	std::cout << "darkest secret : "<< contact.darkest_secret << std::endl;
+	std::cout << "first_name : "<< contact.GetFirstName() << std::endl;
+	std::cout << "last name : "<< contact.GetLastName() << std::endl;
+	std::cout << "nickname : "<< contact.GetNickName() << std::endl;
+	std::cout << "phone number : "<< contact.GetPhoneNumber() << std::endl;
+	std::cout << "darkest secret : "<< contact.GetDarkestSecret() << std::endl;
 }
 
 void	search_index(PhoneBook *phonebook)
@@ -81,21 +65,21 @@ void	search_index(PhoneBook *phonebook)
 	std::cout << std::endl << "index : ";
 	std::getline(std::cin, index);
 	std::cout << std::endl;
-	if (index == "1" && phonebook->contact[0].exist == 1)
+	if (index == "1" && phonebook->contact[0].GetExist() == 1)
 		print_contact(phonebook->contact[0]);
-	else if (index == "2" && phonebook->contact[1].exist == 1)
+	else if (index == "2" && phonebook->contact[1].GetExist() == 1)
 		print_contact(phonebook->contact[1]);
-	else if (index == "3" && phonebook->contact[2].exist == 1)
+	else if (index == "3" && phonebook->contact[2].GetExist() == 1)
 		print_contact(phonebook->contact[2]);
-	else if (index == "4" && phonebook->contact[3].exist == 1)
+	else if (index == "4" && phonebook->contact[3].GetExist() == 1)
 		print_contact(phonebook->contact[3]);
-	else if (index == "5" && phonebook->contact[4].exist == 1)
+	else if (index == "5" && phonebook->contact[4].GetExist() == 1)
 		print_contact(phonebook->contact[4]);
-	else if (index == "6" && phonebook->contact[5].exist == 1)
+	else if (index == "6" && phonebook->contact[5].GetExist() == 1)
 		print_contact(phonebook->contact[5]);
-	else if (index == "7" && phonebook->contact[6].exist == 1)
+	else if (index == "7" && phonebook->contact[6].GetExist() == 1)
 		print_contact(phonebook->contact[6]);
-	else if (index == "8" && phonebook->contact[7].exist == 1)
+	else if (index == "8" && phonebook->contact[7].GetExist() == 1)
 		print_contact(phonebook->contact[7]);
 	else
 		std::cout << "ERROR : You gave a wrong index" << std::endl;
@@ -135,21 +119,21 @@ void	phonebook_search(PhoneBook *phonebook)
 
 	i = 0;
 	std::cout << std::endl;
-	if (phonebook->contact[0].exist == 0)
+	if (phonebook->contact[0].GetExist() == 0)
 	{
 		std::cout << "no contact yet (type 'ADD' to create one)" << std::endl;
 		return ;
 	}
 	std::cout << "     index|first name| last name|  nickname" << std::endl;
 	std::cout << "===========================================" << std::endl;
-	while (phonebook->contact[i].exist == 1)
+	while (phonebook->contact[i].GetExist() == 1)
 	{
 		std::cout << "         " << i + 1 << "|";
-		print_index_contact(phonebook->contact[i].first_name, i);
+		print_index_contact(phonebook->contact[i].GetFirstName(), i);
 		std::cout << "|";
-		print_index_contact(phonebook->contact[i].last_name, i);
+		print_index_contact(phonebook->contact[i].GetLastName(), i);
 		std::cout << "|";
-		print_index_contact(phonebook->contact[i].nickname, i);
+		print_index_contact(phonebook->contact[i].GetNickName(), i);
 		std::cout << std::endl;
 		i++;
 	}
@@ -167,13 +151,19 @@ int	main(int ac, char **av)
 	std::cout << std::endl << std::endl;
 	std::cout << "**AVAILABLE COMMANDS : ADD, SEARCH, EXIT**";
 	std::cout << std::endl << std::endl;
-	init_pb(&pb);
 	while (1)
 	{
 		std::cout << std::endl << "-> ";
 		std::getline(std::cin, cmd);
 		if (cmd == "ADD")
-			phonebook_add(&pb);
+		{
+			pb.contact[pb.Get_nb_of_contact()].AddContact();
+			if (pb.Get_nb_of_contact() < 7 && check_contact(&pb) != -1)
+			{
+				pb.contact[pb.Get_nb_of_contact()].ChangeExist();
+				pb.incr_nb();
+			}
+		}
 		else if (cmd == "SEARCH")
 			phonebook_search(&pb);
 		else if (cmd == "EXIT")

@@ -6,11 +6,11 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/16 20:54:26 by ejahan            #+#    #+#              #
-#    Updated: 2022/04/26 00:49:15 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/16 03:05:00 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	phonebook.cpp
+SRCS		=	phonebook.cpp Contact.cpp 
 
 OBJS		=	${SRCS:.cpp=.o}
 

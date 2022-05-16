@@ -6,11 +6,11 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/15 04:44:11 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/15 04:44:31 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/16 04:27:16 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS		=	main.cpp Animal.cpp Cat.cpp Dog.cpp 
+SRCS		=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp 
 
 OBJS		=	${SRCS:.cpp=.o}
 

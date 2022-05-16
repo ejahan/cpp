@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 04:28:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 04:12:28 by ejahan           ###   ########.fr       */
+/*   Created: 2022/05/16 04:23:28 by ejahan            #+#    #+#             */
+/*   Updated: 2022/05/16 04:26:28 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#include "WrongCat.hpp"
 
-#include "Animal.hpp"
-
-class	Cat : public Animal
+WrongCat::WrongCat(void) : WrongAnimal("Cat")
 {
-	public:
+	std::cout << "A Cat has been created" << std::endl;
+	return ;
+}
 
-		Cat(void);
-		~Cat(void);
+WrongCat::~WrongCat(void)
+{
+	std::cout << "A Cat has been destroyed" << std::endl;
+	return ;
+}
 
-		virtual void	makeSound(void) const;
-
-};
-
-#endif
+void	WrongCat::makeSound() const
+{
+	std::cout << "Meow" << std::endl;
+	return ;
+}

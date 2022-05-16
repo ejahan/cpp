@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 04:28:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 04:12:28 by ejahan           ###   ########.fr       */
+/*   Created: 2022/05/16 04:16:24 by ejahan            #+#    #+#             */
+/*   Updated: 2022/05/16 04:26:09 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class	Cat : public Animal
+class	WrongCat : public WrongAnimal
 {
 	public:
 
-		Cat(void);
-		~Cat(void);
+		WrongCat(void);
+		~WrongCat(void);
 
-		virtual void	makeSound(void) const;
+		void	makeSound(void) const;
 
 };
 
