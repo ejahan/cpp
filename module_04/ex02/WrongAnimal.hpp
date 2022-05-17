@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 04:15:11 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 20:06:38 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/16 21:17:53 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ class	WrongAnimal
 		WrongAnimal	&operator=(WrongAnimal const &rhs);
 
 		std::string	getType(void) const;
-		void	makeSound(void) const;
+		virtual void	makeSound(void) const = 0;
 
 };
 
