@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 00:58:29 by ejahan            #+#    #+#             */
-/*   Updated: 2022/04/30 23:50:39 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/18 22:51:14 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,11 @@
 Zombie::Zombie(void)
 {
 	this->_name = "no_name";
+	return ;
+}
+
+Zombie::Zombie(std::string name) : _name(name)
+{
 	return ;
 }
 

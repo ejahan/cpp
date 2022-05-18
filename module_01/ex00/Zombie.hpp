@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 00:58:51 by ejahan            #+#    #+#             */
-/*   Updated: 2022/04/30 23:50:59 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/18 22:50:35 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class	Zombie
 
 	public:
 		Zombie(void);
+		Zombie(std::string name);
 		~Zombie(void);
 		void	announce(void);
 		void	randomChump(std::string name);

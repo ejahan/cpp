@@ -6,7 +6,7 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/01 15:43:32 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/01 15:45:53 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/18 23:01:13 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Werror -Wextra
 
-NAME		=	exec
+NAME		=	hi_brain
 
 RM			=	rm -rf
 

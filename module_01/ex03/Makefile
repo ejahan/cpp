@@ -6,7 +6,7 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/01 16:41:22 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/12 23:44:37 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/18 23:03:30 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC			=	clang++
 
 CFLAGS		=	-Wall -Werror -Wextra
 
-NAME		=	exec
+NAME		=	UnnecessaryViolence
 
 RM			=	rm -rf
 

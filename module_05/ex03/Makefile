@@ -6,12 +6,12 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 21:23:41 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/18 05:16:09 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/18 20:45:26 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS		=	main.cpp Bureaucrat.cpp Form.cpp PresidentialPardonForm.cpp \
-				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp 
+				RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp 
 
 OBJS		=	${SRCS:.cpp=.o}
 
