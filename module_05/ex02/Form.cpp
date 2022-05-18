@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 05:27:35 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 02:25:57 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/18 06:11:46 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,41 @@ bool		Form::GetSigned(void) const
 	return (this->_signed);
 }
 
+// ici :
 void		Form::BeSigned(Bureaucrat const &bureaucrat)
 {
-	if (bureaucrat.GetGrade() <= this->_grade_sign)
-		this->_signed = true;
-	else
-		throw GradeTooLowException();
+	try
+	{
+		if (bureaucrat.GetGrade() <= this->_grade_sign)
+			this->_signed = true;
+		else
+			throw GradeTooLowException();
+	}
+	catch (Form::GradeTooLowException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+}
+
+// ici :
+void		Form::execute(Bureaucrat const &executor) const
+{
+	try
+	{
+		if (this->_signed == false)
+			throw NotSignedFormException();
+		if (executor.GetGrade() > this->_grade_exec)
+			throw GradeTooLowException();
+		this->act();
+	}
+	catch (Form::NotSignedFormException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (Form::GradeTooLowException ex)
+	{
+		std::cout << ex.what() << std::endl;
+	}
 }
 
 Form	&Form::operator=(Form const &src)

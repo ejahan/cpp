@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:24:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/17 03:12:15 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/18 02:21:34 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define BUREAUCRAT_HPP
 
 #include <iostream>
+#include "Form.hpp"
+
+class	Form;
 
 class	Bureaucrat
 {
@@ -34,6 +37,10 @@ class	Bureaucrat
 		std::string	GetName(void) const;
 		int			GetGrade(void) const;
 
+		void	IncrementBureaucrat(void);
+		void	DecreaseBureaucrat(void);
+		void	signForm(Form &form);
+
 		class	GradeTooHighException : public std::exception
 		{
 			public:
@@ -50,9 +57,6 @@ class	Bureaucrat
 					return ("ERROR : grade too low");
 				}
 		};
-
-		void	IncrementBureaucrat(void);
-		void	DecreaseBureaucrat(void);
 
 };
 
