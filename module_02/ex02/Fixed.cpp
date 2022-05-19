@@ -6,16 +6,11 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 01:12:15 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/13 02:53:29 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/19 23:15:15 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-
-/*
-** constructeurs / destructeur
-** =============================================================================
-*/
 
 Fixed::Fixed(void)
 {
@@ -50,6 +45,18 @@ Fixed::~Fixed(void)
 ** fonctions membres
 ** =============================================================================
 */
+
+int	Fixed::getRawBits(void) const
+{
+	// std::cout << "getRawBits member function called" << std::endl;
+	return (this->_nb);
+}
+
+void	Fixed::setRawBits(int const raw)
+{
+	this->_nb = raw;
+	return ;
+}
 
 float	Fixed::toFloat(void) const
 {
@@ -165,14 +172,25 @@ Fixed	Fixed::operator*(Fixed const &rhs)
 Fixed	Fixed::operator/(Fixed const &rhs)
 {
 	if (rhs.toFloat() != 0)
-	{
-		Fixed	fixed(this->toFloat() + rhs.toFloat());
-		return (fixed);
-	}
+		return (Fixed(this->toFloat() / rhs.toFloat()));
 	else
 		std::cout << "ERROR : You can't divide by zero" << std::endl;
 	return (*this);
 }
+
+
+// Fixed			Fixed::operator/( Fixed const & rhs )
+// {
+// 	return Fixed(this->toFloat() / rhs.toFloat());
+// }
+
+// Fixed		Fixed::operator/( Fixed const & other ) const {
+// 	if (other.toFloat() != 0) {
+// 		return Fixed(this->toFloat() / other.toFloat());
+// 	}
+// 	else
+// 		throw std::runtime_error("Error: Divsion by 0.");
+// }
 
 Fixed	Fixed::operator++(void)
 {

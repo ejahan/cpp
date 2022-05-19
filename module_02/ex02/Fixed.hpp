@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 01:12:32 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/13 02:56:04 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/19 23:11:38 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,14 @@ class	Fixed
 		Fixed(Fixed const &rhs);
 		~Fixed(void);
 
+		int	getRawBits(void) const;
+		void	setRawBits(int const raw);
 		float		toFloat(void) const;
 		int			toInt(void) const;
-		Fixed		&min(Fixed &a, Fixed &b);
-		const Fixed	&min(Fixed const &a, Fixed const &b);
-		Fixed		&max(Fixed &a, Fixed &b);
-		const Fixed	&max(Fixed const &a, Fixed const &b);
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static const Fixed	&min(Fixed const &a, Fixed const &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
+		static const Fixed	&max(Fixed const &a, Fixed const &b);
 
 		int		operator>(Fixed const &rhs);
 		int		operator<(Fixed const &rhs);
