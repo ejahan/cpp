@@ -6,7 +6,7 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 20:59:02 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/18 20:59:16 by ejahan           ###   ########.fr        #
+#    Updated: 2022/05/18 23:52:11 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Werror -Wextra
 
-NAME		=	exec
+NAME		=	convert
 
 RM			=	rm -rf
 
