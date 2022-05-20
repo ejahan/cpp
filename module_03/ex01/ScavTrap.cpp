@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 05:36:27 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/20 05:17:24 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 22:13:57 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,33 +53,6 @@ void	ScavTrap::attack(const std::string &target)
 		this->_EnergyPoints -= 1;
 		std::cout << "ScavTrap " << this->_Name << " attacks " << target \
 			<< ", causing " << this->_Attack_damage << " points of damage" << std::endl;
-	}
-	if (this->_EnergyPoints == 0)
-		std::cout << "ScavTrap " << this->_Name << " doesn't have enought Energy to continue, " << std::endl;
-}
-
-void	ScavTrap::takeDamage(unsigned int amount)
-{
-	if (this->_HitPoints >= 1)
-	{
-		this->_HitPoints -= amount;
-		std::cout << "ScavTrap " << this->_Name << " has been attacked -> " << RED "-" \
-			<< amount << NOR << " HitPoints" << std::endl;
-		if (this->_HitPoints <= 0)
-			std::cout << "ScavTrap " << this->_Name << " is dead" << std::endl;
-	}
-	if (this->_EnergyPoints == 0)
-		std::cout << "ScavTrap " << this->_Name << " doesn't have enought Energy to continue, " << std::endl;
-}
-
-void	ScavTrap::beRepaired(unsigned int amount)
-{
-	if (this->_EnergyPoints >= 1)
-	{
-		this->_EnergyPoints -= 1;
-		this->_HitPoints += amount;
-		std::cout << "ScavTrap " << this->_Name << " has been repaired -> " << GREEN "+" \
-			<< amount << NOR << " HitPoints"<< std::endl;
 	}
 	if (this->_EnergyPoints == 0)
 		std::cout << "ScavTrap " << this->_Name << " doesn't have enought Energy to continue, " << std::endl;

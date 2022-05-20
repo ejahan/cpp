@@ -6,76 +6,11 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 21:15:25 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/19 05:14:31 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:17:08 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// // demotion > regagner en precision
-// // promotion > perdre en precision
-
-
-// const -> plus precis
-
-
-
-// 	/*static cast*/ truc = static_cast<type>(src)
-// pour les valeurs simples
-// pas ouf pour class sauf si diff arbres heritages 
-
-// 	/*dynamic cast*/ truc = dynamic_cast<type>(src)
-// -> pendant l execution donc peut echouer
-// fonctionne que dans le cas de polymorphisme (une fonction membre est virtual)
-// si erreur -> return NULL
-
-// 	/*reinterpret cast*/ truc = reinterpret_cast<type>(src) 
-// cast le plus permissif
-// si faux -> peut crash
-// souvent pour retypage (char * -> void * -> char *)
-
-// 	/*const cast*/ truc = const_cast<type>(src)
-// capable transformation qualifieur de type
-// -> pas ouf
-
-// 	/*cast operator*/
-// definir dans les class des operateurs specifiques pour faire des conversions \
-// implicites de notre class vers un type
-
-// operator type()
-// {
-// 	blablabla
-// }
-// /*ex:
-// class a;
-// int b = a;
-// */
-
-// 	/*explicite*/
-// interdit la construction implicite d une class 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include "Convert.hpp"
 
 int	main(int ac, char **av)
 {
@@ -87,23 +22,9 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	str = av[1];
-	Convert	convert();
+	Convert	convert(str);
+
+	std::cout << convert << std::endl;
 
 	return (0);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

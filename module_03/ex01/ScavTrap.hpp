@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 05:36:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/20 05:15:06 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 22:13:50 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ class	ScavTrap : public ClapTrap
 		ScavTrap	&operator=(ScavTrap const &rhs);
 
 		void	attack(const std::string &target);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
 		void	guardGate(void);
 
 };

@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 03:01:47 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/20 05:00:43 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 22:10:43 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main()
 		{
 			ScavTrap1.attack(ScavTrap2.GetName());
 			print_points1(&ScavTrap1);
-			ScavTrap2.takeDamage(3);
+			ScavTrap2.takeDamage(ScavTrap1.GetAttackDamage());
 			print_points2(&ScavTrap2);
 			i = 2;
 		}
@@ -72,7 +72,7 @@ int	main()
 		{
 			ScavTrap2.attack(ScavTrap1.GetName());
 			print_points2(&ScavTrap2);
-			ScavTrap1.takeDamage(3);
+			ScavTrap1.takeDamage(ScavTrap2.GetAttackDamage());
 			print_points1(&ScavTrap1);
 			i = 1;
 		}

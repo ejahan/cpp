@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:23:18 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/17 03:17:19 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 18:05:11 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	Bureaucrat::DecreaseBureaucrat(void)
 
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &src)
 {
-	// this->_name = src._name;
 	this->_grade = src._grade;
 	return (*this);
 }

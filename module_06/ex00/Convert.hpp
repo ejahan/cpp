@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 01:53:44 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/19 05:26:12 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 19:33:30 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,33 @@ class	Convert
 		Convert(Convert const &src);
 		~Convert(void);
 
-		std::string	Get_str(void);
+		std::string	Get_str(void) const;
+		char		PrintChar(void) const;
+		// int			PrintInt(void);
+		// float		PrintFloat(void);
+		// double		PrintDouble(void);
 
 		Convert	&operator=(Convert const &src);
 
-		class	NotSignedFormException : public std::exception
+		class	ImpossibleException : public std::exception
 		{
 			public:
 				virtual const char*	what() const throw()
 				{
-					return ("ERROR : Form is not signed");
+					return ("Impossible");
 				}
 		};
+		class	NoDisplayableException : public std::exception
+		{
+			public:
+				virtual const char*	what() const throw()
+				{
+					return ("Non displayable");
+				}
+		};
+
 };
 
-char int float double
+std::ostream &operator<<(std::ostream &o, Convert const &convert);
 
 #endif
