@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 03:01:41 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/15 03:00:48 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 04:50:10 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,23 @@ ClapTrap::ClapTrap(std::string name) : _Name(name), _HitPoints(10), _EnergyPoint
 {
 	std::cout << "A ClapTrap has been created" << std::endl;
 	return ;
+}
+
+ClapTrap::ClapTrap(ClapTrap const &rhs)
+{
+	std::cout << "Copy constructor called" << std::endl;
+	*this = rhs;
+	return ;
+}
+
+ClapTrap	&ClapTrap::operator=(ClapTrap const &rhs)
+{
+	std::cout << "Copy assignment operator called" << std::endl;
+	this->_Name = rhs._Name;
+	this->_HitPoints = rhs._HitPoints;
+	this->_EnergyPoints = rhs._EnergyPoints;
+	this->_Attack_damage = rhs._Attack_damage;
+	return (*this);
 }
 
 ClapTrap::~ClapTrap()
@@ -48,8 +65,8 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	if (this->_HitPoints >= 1)
 	{
 		this->_HitPoints -= amount;
-		std::cout << std::endl << std::endl << this->_Name << " has been attacked -> -" \
-			<< amount << " HitPoints" << std::endl;
+		std::cout << std::endl << std::endl << this->_Name << " has been attacked -> " << RED << "-" \
+			<< amount << NOR << " HitPoints" << std::endl;
 		if (this->_HitPoints <= 0)
 			std::cout << this->_Name << " is dead" << std::endl;
 
@@ -64,8 +81,8 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	{
 		this->_EnergyPoints -= 1;
 		this->_HitPoints += amount;
-		std::cout << std::endl << std::endl << this->_Name << " has been repaired -> +" \
-			<< amount << " HitPoints"<< std::endl;
+		std::cout << std::endl << std::endl << this->_Name << " has been repaired -> " << GREEN << "+" \
+			<< amount << NOR << " HitPoints"<< std::endl;
 
 	}
 	if (this->_EnergyPoints == 0)
@@ -80,6 +97,11 @@ int	ClapTrap::GetEnergy(void)
 int	ClapTrap::GetHitPoints(void)
 {
 	return (this->_HitPoints);
+}
+
+int	ClapTrap::GetAttackDamage(void)
+{
+	return (this->_Attack_damage);
 }
 
 std::string	ClapTrap::GetName(void)

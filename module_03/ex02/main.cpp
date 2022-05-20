@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 03:01:47 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/15 03:45:01 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/20 05:26:51 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,14 @@
 
 void	print_points1(ScavTrap *ScavTrap)
 {
-	std::cout << std::endl << "	" << "Player1 :" << std::endl;
+	std::cout << std::endl << PINK << "	" << "Player1 :" << std::endl << NOR;
 	std::cout << "HitPoints = " << ScavTrap->GetHitPoints() << std::endl;
 	std::cout << "EnergyPoints = " << ScavTrap->GetEnergy() << std::endl << std::endl;
 }
 
 void	print_points2(FragTrap *FragTrap)
 {
-	std::cout << std::endl << "	" << "Player2 :" << std::endl;
+	std::cout << std::endl << PINK << "	" << "Player2 :" << std::endl << NOR;
 	std::cout << "HitPoints = " << FragTrap->GetHitPoints() << std::endl;
 	std::cout << "EnergyPoints = " << FragTrap->GetEnergy() << std::endl << std::endl;
 }
@@ -57,16 +57,20 @@ int	main()
 	while (ScavTrap1.GetEnergy() > 0 && ScavTrap1.GetHitPoints() > 0
 		&& FragTrap.GetEnergy() > 0 && FragTrap.GetHitPoints() > 0)
 	{
+		std::cout << BLUE;
 		if (i == 1)
 			AskScavTrap(&ScavTrap1);
 		else
 			AskFragTrap(&FragTrap);
+		std::cout << NOR;
 		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			return (0);
 		if (i == 1 && cmd == "1")
 		{
 			ScavTrap1.attack(FragTrap.GetName());
 			print_points1(&ScavTrap1);
-			FragTrap.takeDamage(3);
+			FragTrap.takeDamage(ScavTrap1.GetAttackDamage());
 			print_points2(&FragTrap);
 			i = 2;
 		}
@@ -86,7 +90,7 @@ int	main()
 		{
 			FragTrap.attack(ScavTrap1.GetName());
 			print_points2(&FragTrap);
-			ScavTrap1.takeDamage(3);
+			ScavTrap1.takeDamage(FragTrap.GetAttackDamage());
 			print_points1(&ScavTrap1);
 			i = 1;
 		}
@@ -105,6 +109,9 @@ int	main()
 		else
 			std::cout << "ERROR : Not a valid command" << std::endl;
 	}
-	std::cout << "machin a gagne wouhouuu -> flemme de le faire bien" << std::endl << std::endl;
+	if (ScavTrap1.GetEnergy() <= 0 || ScavTrap1.GetHitPoints() <= 0)
+		std::cout << GREEN << "Player2 won!!" << std::endl << std::endl << NOR;
+	else if (FragTrap.GetEnergy() <= 0 || FragTrap.GetHitPoints() <= 0)
+		std::cout << GREEN << "Player1 won!!" << std::endl << std::endl << NOR;
 	return (0);
 }
