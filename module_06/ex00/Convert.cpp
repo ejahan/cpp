@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 01:53:51 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/20 19:37:18 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/05/21 06:42:03 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 Convert::Convert(void) : _str("error")
 {
-    // std::cout << "Convert default constructor called" << std::endl;
-    return ;
+	// std::cout << "Convert default constructor called" << std::endl;
+	return ;
 }
 
-Convert::Convert(std::string str) : _str(str)
+Convert::Convert(std::string str, double nb) : _str(str), _nb_d(nb)
 {
 	return ;
 }
@@ -62,30 +62,30 @@ std::ostream	&operator<<(std::ostream &o, Convert const &convert)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	// try
-	// {
-	// 	o << "int: " << convert.PrintInt() << std::endl;
-	// }
-	// catch (Convert::ImpossibleException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try
-	// {
-	// 	o << "float: " << convert.PrintFloat() << std::endl;
-	// }
-	// catch (Convert::ImpossibleException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// try
-	// {
-	// 	o << "double: " << convert.PrintDouble() << std::endl;
-	// }
-	// catch (Convert::ImpossibleException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
+	try
+	{
+		o << "int: " << convert.PrintInt() << std::endl;
+	}
+	catch (Convert::ImpossibleException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		o << "float: " << convert.PrintFloat() << "f" << std::endl;
+	}
+	catch (Convert::ImpossibleException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
+		o << "double: " << convert.PrintDouble() << std::endl;
+	}
+	catch (Convert::ImpossibleException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 	return (o);
 }
 
@@ -104,38 +104,38 @@ char	Convert::PrintChar(void) const
 {
 	char	c;
 
-	if (this->_str.length() > 1)
-		throw ImpossibleException();
-	// if (this->_str[0] == ' ')
-	// 	throw NoDisplayableException();
-	c = this->_str[0];
-	// c = static_cast<char>(this->_str);
+	// if (this->_str.length() > 1)
+	// 	throw ImpossibleException();
+	if ()
+	c = static_cast<char>(this->_nb_d);
+	if (!isprint(c))
+		throw NoDisplayableException();
 	return (c);
 }
 
-// int		Convert::PrintInt(void)
-// {
-// 	int	nb;
+int		Convert::PrintInt(void) const
+{
+	int	nb;
 
-// 	if ()
-// 		throw ImpossibleException();
-// 	return (nb);
-// }
+	// if ()
+	// 	throw ImpossibleException();
+	nb = static_cast<int>(this->_nb_d);
+	return (nb);
+}
 
-// float	Convert::PrintFloat(void)
-// {
-// 	float	nb;
+float	Convert::PrintFloat(void) const
+{
+	float	nb;
 
-// 	if ()
-// 		throw ImpossibleException();
-// 	return (nb);
-// }
+	nb = static_cast<float>(this->_nb_d);
+	return (nb);
+}
 
-// double	Convert::PrintDouble(void)
-// {
-// 	double	nb;
+double	Convert::PrintDouble(void) const
+{
+	// double	nb;
 
-// 	if ()
-// 		throw ImpossibleException();
-// 	return (nb);
-// }
+	// if ()
+	// 	throw ImpossibleException();
+	return (this->_nb_d);
+}
