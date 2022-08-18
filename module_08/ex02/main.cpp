@@ -6,16 +6,11 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:17:07 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/16 21:23:24 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/18 14:28:30 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-
-// int	main()
-// {
-// 	return (0);
-// }
 
 int main()
 {
@@ -24,28 +19,63 @@ int main()
 	mstack.push(5);
 	mstack.push(17);
 
-	std::cout << mstack.top() << std::endl;
+	std::cout << "top : " << mstack.top() << std::endl << std::endl;
 
 	mstack.pop();
 
-	std::cout << mstack.size() << std::endl;
+	std::cout << "size : " << mstack.size() << std::endl << std::endl;
 
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
-	//[...]
 	mstack.push(0);
 
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 
+	std::cout << "it : " << *it << std::endl << std::endl;
 	++it;
 	--it;
+	std::cout << "stack : " << std::endl << std::endl;
 	while (it != ite)
 	{
 		std::cout << *it << std::endl;
 		++it;
 	}
-	std::stack<int> s(mstack);
+	// std::stack<int> s(mstack);
+
+
+
+	std::cout << std::endl << std::endl << "VECTOR TEST : " << std::endl << std::endl;
+
+	std::vector<int> vec;
+
+	vec.push_back(5);
+	vec.push_back(17);
+
+	std::cout << "top : " << vec.back() << std::endl << std::endl;
+
+	vec.pop_back();
+
+	std::cout << "size : " << vec.size() << std::endl << std::endl;
+
+	vec.push_back(3);
+	vec.push_back(5);
+	vec.push_back(737);
+	vec.push_back(0);
+
+	std::vector<int>::iterator v_it = vec.begin();
+	std::vector<int>::iterator v_ite = vec.end();
+
+	std::cout << "it : " << *v_it << std::endl << std::endl;
+	++v_it;
+	--v_it;
+	std::cout << "stack : " << std::endl << std::endl;
+	while (v_it != v_ite)
+	{
+		std::cout << *v_it << std::endl;
+		++v_it;
+	}
+	
 	return 0;
 }
