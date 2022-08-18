@@ -6,7 +6,7 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/16 21:17:10 by ejahan            #+#    #+#              #
-#    Updated: 2022/08/18 14:11:28 by ejahan           ###   ########.fr        #
+#    Updated: 2022/08/18 15:59:46 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,14 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 NAME		=	MutantStack
 
 RM			=	rm -rf
 
-.cpp.o:		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o:%.cpp
+			${CC} -o $@ -c $< ${CFLAGS}
 
 all:		${NAME}
 

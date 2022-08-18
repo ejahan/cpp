@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   iter.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elisa <elisa@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:48:11 by elisa             #+#    #+#             */
-/*   Updated: 2022/07/16 12:59:46 by elisa            ###   ########.fr       */
+/*   Updated: 2022/08/18 15:47:21 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void    print(T & nul)
 template <typename T>
 void  iter(T * tab, unsigned int size, void f(T & t))
 {
-    int i = 0;
+    unsigned int i = 0;
 
     while (i < size)
     {

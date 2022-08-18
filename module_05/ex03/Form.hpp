@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 05:27:46 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 05:35:00 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/18 15:38:05 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ class	Form
 		Form	&operator=(Form const &rhs);
 
 		std::string	GetName(void) const;
-		int const	GetGradeSign(void) const;
-		int const	GetGradeExec(void) const;
+		int	GetGradeSign(void) const;
+		int	GetGradeExec(void) const;
 		bool		GetSigned(void) const;
 
 		void		BeSigned(Bureaucrat const &bureaucrat);

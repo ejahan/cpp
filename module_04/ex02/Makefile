@@ -6,7 +6,7 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/15 04:44:11 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/16 20:21:24 by ejahan           ###   ########.fr        #
+#    Updated: 2022/08/18 15:20:03 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,11 +19,12 @@ CC			=	c++
 
 CFLAGS		=	-Wall -Werror -Wextra
 
-NAME		=	exec
+NAME		=	Animal
 
 RM			=	rm -rf
 
-.cpp.o:		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o:%.cpp
+			${CC} -o $@ -c $< ${CFLAGS}
 
 all:		${NAME}
 

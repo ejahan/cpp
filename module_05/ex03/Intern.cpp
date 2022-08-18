@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 06:17:19 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 20:51:15 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/18 15:40:18 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Intern::~Intern(void)
 
 Intern	&Intern::operator=(Intern const &src)
 {
+	(void)src;
 	return (*this);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elisa <elisa@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:06:38 by elisa             #+#    #+#             */
-/*   Updated: 2022/07/24 19:13:23 by elisa            ###   ########.fr       */
+/*   Updated: 2022/08/18 15:57:43 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,9 @@ int main(void)
 
 	// Array<std::string> test_array3;
 	// test_array3 = test_array2;
+	std::cout << "test" << std::endl;
 	Array<std::string> test_array3(test_array2);
+	std::cout << "test" << std::endl;
 	// test_array2[0] = "azertyuiop";
 	// test_array2[1] = "qsdfghjklm";
 

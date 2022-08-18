@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 04:42:38 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 05:57:57 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/18 15:39:19 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	ShrubberyCreationForm::act(void) const
 	std::string	name;
 
 	name = this->_target + "_shrubbery";
-	std::ofstream	ofs(name);
+	std::ofstream	ofs(name.c_str());
 
 	ofs << "               ,@@@@@@@,                  " << std::endl;
 	ofs << "       ,,,.   ,@@@@@@/@@,  .oo8888o.      " << std::endl;
@@ -63,7 +63,7 @@ void	ShrubberyCreationForm::act(void) const
 	ofs << "   `&% ` /%&'     |.|         '|8'       " << std::endl;
 	ofs << "       |o|        | |         | |         " << std::endl;
 	ofs << "       |.|        | |         | |         " << std::endl;
-	ofs << "/_\/_\\/ ._\//_/__/  ,\_//__\\/.  \_//__/_" << std::endl;
+	ofs << "/__/_\\/ .__//_/__/  ,__//__\\/.  \\_//__/_" << std::endl;
 
 	ofs.close();
 

@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 05:27:35 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 06:11:46 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/18 15:38:52 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Form::Form(std::string const name, int const a, int const b)
 }
 
 Form::Form(Form const &src)
-	: _name(src._name), _grade_exec(src._grade_exec), _grade_sign(src._grade_sign)
+	: _name(src._name), _grade_sign(src._grade_sign), _grade_exec(src._grade_exec)
 {
 	*this = src;
 	return ;
@@ -46,12 +46,12 @@ std::string	Form::GetName(void) const
 	return (this->_name);
 }
 
-int const	Form::GetGradeSign(void) const
+int	Form::GetGradeSign(void) const
 {
 	return (this->_grade_sign);
 }
 
-int const	Form::GetGradeExec(void) const
+int	Form::GetGradeExec(void) const
 {
 	return (this->_grade_exec);
 }

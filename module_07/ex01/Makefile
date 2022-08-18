@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: elisa <elisa@student.42.fr>                +#+  +:+       +#+         #
+#    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 21:23:41 by ejahan            #+#    #+#              #
-#    Updated: 2022/07/16 12:44:58 by elisa            ###   ########.fr        #
+#    Updated: 2022/08/18 15:46:38 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,13 +16,14 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 
 NAME		=	iter
 
 RM			=	rm -rf
 
-.cpp.o:		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o:%.cpp
+			${CC} -o $@ -c $< ${CFLAGS}
 
 all:		${NAME}
 

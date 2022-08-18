@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:17:12 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/18 14:11:01 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/18 16:00:42 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,11 @@ class	MutantStack : public std::stack<T>
 
 		iterator	begin(void)
 		{
-			return std::begin(this->c);
+			return this->c.begin();
 		}
 		iterator	end(void)
 		{
-			return std::end(this->c);
+			return (this->c.end());
 		}
 
 };

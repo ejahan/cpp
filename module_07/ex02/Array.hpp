@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: elisa <elisa@student.42.fr>                +#+  +:+       +#+        */
+/*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:06:39 by elisa             #+#    #+#             */
-/*   Updated: 2022/07/24 19:11:34 by elisa            ###   ########.fr       */
+/*   Updated: 2022/08/18 15:57:31 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,12 @@ class	Array
 
 			this->_array = new T[rhs._size];
 			this->_size = rhs.size();
-			while (i-- >= 0)
+			i--;
+			while (i >= 0)
+			{
 				this->_array[i] = rhs._array[i];
+				i--;
+			}
 		}
 		~Array(void)
 		{

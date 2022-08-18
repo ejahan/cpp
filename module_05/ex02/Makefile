@@ -6,7 +6,7 @@
 #    By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/16 21:23:41 by ejahan            #+#    #+#              #
-#    Updated: 2022/05/18 05:16:09 by ejahan           ###   ########.fr        #
+#    Updated: 2022/08/18 15:36:48 by ejahan           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,13 +17,14 @@ OBJS		=	${SRCS:.cpp=.o}
 
 CC			=	c++
 
-CFLAGS		=	-Wall -Werror -Wextra
+CFLAGS		=	-Wall -Werror -Wextra -std=c++98
 
-NAME		=	exec
+NAME		=	Bureaucrat
 
 RM			=	rm -rf
 
-.cpp.o:		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o:%.cpp
+			${CC} -o $@ -c $< ${CFLAGS}
 
 all:		${NAME}
 

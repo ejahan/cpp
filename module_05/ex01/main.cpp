@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:24:07 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 02:40:41 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/18 15:26:52 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void)
 	try
 	{
 		Form	test("FirstForm", 150, 35);
+		std::cout << "it's ok!" << std::endl;
 	}
 	catch (Form::GradeTooHighException e)
 	{
@@ -32,38 +33,38 @@ int	main(void)
 
 
 	
-	// std::cout << std::endl << "	Valid grade in declaration :" << std::endl;
-	// std::cout << "====================================" << std::endl << std::endl;
-	// Bureaucrat bureaucrat1("Bureaucrat1", 1);
-	// std::cout << bureaucrat1 << std::endl;
-	// try
-	// {
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
+	std::cout << std::endl << "	Valid grade in declaration :" << std::endl;
+	std::cout << "====================================" << std::endl << std::endl;
+	Bureaucrat bureaucrat1("Bureaucrat1", 1);
+	std::cout << bureaucrat1 << std::endl;
+	try
+	{
+	}
+	catch (Bureaucrat::GradeTooHighException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
 
 
-	// std::cout << std::endl << "	Unvalid grade in declaration (too low) :" << std::endl;
-	// std::cout << "================================================" << std::endl << std::endl;
-	// try
-	// {
-	// 	Bureaucrat bureaucrat2("Bureaucrat2", 0);
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl << std::endl;
-	// }
+	std::cout << std::endl << "	Unvalid grade in declaration (too low) :" << std::endl;
+	std::cout << "================================================" << std::endl << std::endl;
+	try
+	{
+		Bureaucrat bureaucrat2("Bureaucrat2", 0);
+	}
+	catch (Bureaucrat::GradeTooHighException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (Bureaucrat::GradeTooLowException e)
+	{
+		std::cout << e.what() << std::endl << std::endl;
+	}
 
 
 
