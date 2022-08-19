@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 21:15:25 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/21 06:39:16 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/20 01:20:30 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,17 @@ int	main(int ac, char **av)
 		std::cout << "Wrong number of arguments" << std::endl;
 		return (1);
 	}
+
+	/*
+		cas erreurs :
+			trop de lettre
+			+inf / -inf / nan / -inff / +inff / nanf
+			jsp
+	*/
+
 	str = av[1];
-	nb_d = std::stod(str);
-	Convert	convert(str, nb_d);
-	std::cout << convert << std::endl;
+	nb_d = std::stod(av[1]);
+	std::cout << nb_d << std::endl;
 
 	return (0);
 }

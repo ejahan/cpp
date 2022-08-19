@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:17:12 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/18 16:00:42 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/19 19:13:55 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,3 @@ class	MutantStack : public std::stack<T>
 };
 
 #endif
-
-/*
-	typedef typename ft::stack<T>::container_type::iterator iterator;
-
-	iterator begin() { return this->c.begin(); }
-	iterator end() { return this->c.end(); }
-*/

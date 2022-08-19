@@ -36,6 +36,7 @@ operator type()
 {
 	blablabla
 }
+
 /*ex:
 class a;
 int b = a;
@@ -43,3 +44,62 @@ int b = a;
 
 	/*explicite*/
 interdit la construction implicite d une class 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+static_cast
+
+convert :
+char
+int
+double
+float
+
+
+class
+{
+	private:
+		char	c;
+		int		i;
+		float	f;
+		double	d;
+		std::string	str;
+
+	public:
+		void	from_char();
+		void	from_int();
+		void	from_float();
+		void	from_double();
+}
+
+
+si char
+{
+	from_char(str)
+	
+}
+
+
+
+
+
+

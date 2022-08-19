@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:20:36 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 20:28:44 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/19 22:52:24 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,10 @@ void	Cat::makeSound() const
 {
 	std::cout << "Meow" << std::endl;
 	return ;
+}
+
+Brain	*Cat::GetBrain(void) const
+{
+	std::cout <<  &this->_brain << std::endl;
+	return (this->_brain);
 }

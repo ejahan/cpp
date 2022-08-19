@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 04:16:24 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 20:05:01 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/19 22:16:37 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	WrongCat : public WrongAnimal
 
 		WrongCat(void);
 		WrongCat(WrongCat const &src);
-		~WrongCat(void);
+		virtual ~WrongCat(void);
 
 		WrongCat	&operator=(WrongCat const &rhs);
 

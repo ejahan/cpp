@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:28:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 20:20:45 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/19 22:52:34 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ class	Cat : public Animal
 
 		Cat(void);
 		Cat(Cat const &src);
-		~Cat(void);
+		virtual ~Cat(void);
 
 		Cat	&operator=(Cat const &rhs);
 
 		virtual void	makeSound(void) const;
+
+		Brain	*GetBrain(void) const;
 
 };
 

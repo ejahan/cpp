@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:19:52 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 04:45:11 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/19 21:38:47 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,17 @@ int	main()
 	const Animal* i = new Cat();
 	const WrongAnimal* Animal = new WrongAnimal();
 	const WrongAnimal* Cat = new WrongCat();
+	const WrongCat	wrong_cat;
 
 	std::cout << std::endl << "===============" << std::endl;
 	std::cout << "	RIGHT :" << std::endl;
-	std::cout << "===============" << std::endl;
+	std::cout << "===============" << std::endl << std::endl;
+	std::cout << "types :" << std::endl;
 	std::cout << std::endl << j->getType() << " " << std::endl;
-	std::cout << i->getType() << " " << std::endl << std::endl;
+	std::cout << i->getType() << " " << std::endl;
+	std::cout << meta->getType() << " " << std::endl << std::endl;
 
+	std::cout << "sounds :" << std::endl << std::endl;
 	std::cout << "Dog sound : ";
 	j->makeSound();
 	std::cout << "Cat sound : ";
@@ -38,14 +42,20 @@ int	main()
 
 	std::cout << "===============" << std::endl;
 	std::cout << "	WRONG :" << std::endl;
-	std::cout << "===============" << std::endl;
+	std::cout << "===============" << std::endl << std::endl;
+	std::cout << "types :" << std::endl;
 	std::cout << std::endl << Animal->getType() << " " << std::endl;
 	std::cout << Cat->getType() << " " << std::endl << std::endl;
 
+	std::cout << "sounds :" << std::endl << std::endl;
 	std::cout << "Animal sound : ";
 	Animal->makeSound();
 	std::cout << "Cat sound : ";
 	Cat->makeSound();
+	std::cout << std::endl;
+
+	std::cout << "WrongCat 'wrong_cat' sound :" << std::endl << std::endl;
+	wrong_cat.makeSound();
 	std::cout << std::endl;
 
 	delete meta;

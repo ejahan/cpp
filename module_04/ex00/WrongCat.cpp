@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 04:23:28 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 04:26:28 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/19 19:43:18 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 WrongCat::WrongCat(void) : WrongAnimal("Cat")
 {
-	std::cout << "A Cat has been created" << std::endl;
+	std::cout << "A Wrong Cat has been created" << std::endl;
 	return ;
 }
 
 WrongCat::~WrongCat(void)
 {
-	std::cout << "A Cat has been destroyed" << std::endl;
+	std::cout << "A Wrong Cat has been destroyed" << std::endl;
 	return ;
 }
 
