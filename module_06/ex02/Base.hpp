@@ -1,39 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 04:28:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/20 14:30:24 by ejahan           ###   ########.fr       */
+/*   Created: 2022/08/20 20:12:58 by ejahan            #+#    #+#             */
+/*   Updated: 2022/08/20 20:22:26 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class	Cat : public Animal
-{
-	private:
-
-		Brain	*_brain;
+#ifndef BASE_HPP
+# define BASE_HPP
+ 
+# include <iostream>
+ 
+class Base {
 
 	public:
-
-		Cat(void);
-		Cat(Cat const &src);
-		virtual ~Cat(void);
-
-		Cat	&operator=(Cat const &rhs);
-
-		virtual void	makeSound(void) const;
-
-		Brain	*GetBrain(void) const;
-
+		virtual ~Base (void) {}
 };
 
 #endif

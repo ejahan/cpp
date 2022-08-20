@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:24:07 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/17 05:22:41 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/20 14:51:39 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	main(void)
 	Bureaucrat test1("BureaucratTest", 100);
 
 	std::cout << test1 << std::endl;
-	std::cout << "** Increment ** " << std::endl;
+	std::cout << "** Decrease **" << std::endl;
 	try
 	{
 		test1.DecreaseBureaucrat();
@@ -86,7 +86,7 @@ int	main(void)
 	}
 	std::cout << test1 << std::endl;
 
-	std::cout << "** Decrease **" << std::endl;
+	std::cout << "** Increment ** " << std::endl;
 	try
 	{
 		test1.IncrementBureaucrat();
@@ -108,7 +108,7 @@ int	main(void)
 	Bureaucrat test2("BureaucratWrong", 150);
 
 	std::cout << test2 << std::endl;
-	std::cout << "** Increment ** " << std::endl;
+	std::cout << "** Decrease **" << std::endl;
 	try
 	{
 		test2.DecreaseBureaucrat();
@@ -123,7 +123,7 @@ int	main(void)
 	}
 	std::cout << test2 << std::endl;
 
-	std::cout << "** Decrease **" << std::endl;
+	std::cout << "** Increment ** " << std::endl;
 	try
 	{
 		test2.IncrementBureaucrat();
@@ -145,7 +145,7 @@ int	main(void)
 	Bureaucrat test3("BureaucratWrong", 1);
 
 	std::cout << test3 << std::endl;
-	std::cout << "** Decrease **" << std::endl;
+	std::cout << "** Increment ** " << std::endl;
 	try
 	{
 		test3.IncrementBureaucrat();
@@ -160,7 +160,7 @@ int	main(void)
 	}
 	std::cout << test3 << std::endl;
 
-	std::cout << "** Increment ** " << std::endl;
+	std::cout << "** Decrease **" << std::endl;
 	try
 	{
 		test3.DecreaseBureaucrat();

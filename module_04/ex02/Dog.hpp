@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:39:32 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 20:17:56 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/20 14:30:04 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,12 @@ class	Dog : public Animal
 
 		Dog(void);
 		Dog(Dog const &src);
-		~Dog(void);
+		virtual ~Dog(void);
 
 		Dog	&operator=(Dog const &rhs);
 
 		virtual void	makeSound(void) const;
+		Brain	*GetBrain(void) const ;
 
 };
 

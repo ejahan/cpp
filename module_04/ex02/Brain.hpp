@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 19:41:20 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 20:21:54 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/20 14:28:26 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,12 @@ class	Brain
 
 		Brain	&operator=(Brain const &rhs);
 
+		void	NewIdea(std::string str);
+
+	private:
+
 		std::string	ideas[100];
+		int	i;
 
 };
 

@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:20:36 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/19 22:52:24 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/20 14:21:51 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ Cat::Cat(void) : Animal("Cat")
 Cat::Cat(Cat const &rhs)
 {
 	std::cout << "Cat copy constructor called" << std::endl;
-	*this = rhs;
+	this->_type = rhs._type;
+	this->_brain = new Brain(*rhs._brain);
 	return ;
 }
 

@@ -1,39 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   ClassB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/15 04:28:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/20 14:30:24 by ejahan           ###   ########.fr       */
+/*   Created: 2022/08/20 20:13:12 by ejahan            #+#    #+#             */
+/*   Updated: 2022/08/20 20:25:56 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef CLASSB_HPP
+# define CLASSB_HPP
 
-#include "Animal.hpp"
-#include "Brain.hpp"
-
-class	Cat : public Animal
-{
-	private:
-
-		Brain	*_brain;
-
-	public:
-
-		Cat(void);
-		Cat(Cat const &src);
-		virtual ~Cat(void);
-
-		Cat	&operator=(Cat const &rhs);
-
-		virtual void	makeSound(void) const;
-
-		Brain	*GetBrain(void) const;
-
-};
+class	B : public Base {};
 
 #endif
