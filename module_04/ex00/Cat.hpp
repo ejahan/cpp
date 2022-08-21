@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 04:28:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/16 04:12:28 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 17:36:01 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ class	Cat : public Animal
 	public:
 
 		Cat(void);
-		~Cat(void);
+		Cat( Cat const & other);
+		virtual ~Cat(void);
+
+		Cat	&operator=(Cat const &rhs);
 
 		virtual void	makeSound(void) const;
 
