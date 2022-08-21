@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 05:27:35 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/18 15:25:24 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 18:36:06 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ Form::Form(std::string const name, int const a, int const b)
 {
 	this->_signed = false;
 	if (this->_grade_sign > 150 || this->_grade_exec > 150)
-		throw GradeTooHighException();
-	if (this->_grade_sign < 1 || this->_grade_exec < 1)
 		throw GradeTooLowException();
+	if (this->_grade_sign < 1 || this->_grade_exec < 1)
+		throw GradeTooHighException();
 	return ;
 }
 

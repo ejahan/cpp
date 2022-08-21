@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:24:07 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/20 14:51:39 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 18:32:39 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void)
 
 
 
-	std::cout << std::endl << "	Unvalid grade in declaration (too low) :" << std::endl;
+	std::cout << std::endl << "	Unvalid grade in declaration (too high) :" << std::endl;
 	std::cout << "================================================" << std::endl << std::endl;
 	try
 	{
@@ -49,7 +49,7 @@ int	main(void)
 
 
 
-	std::cout << std::endl << "	Unvalid grade in declaration (too high) :" << std::endl;
+	std::cout << std::endl << "	Unvalid grade in declaration (too low) :" << std::endl;
 	std::cout << "=================================================" << std::endl << std::endl;
 	try
 	{

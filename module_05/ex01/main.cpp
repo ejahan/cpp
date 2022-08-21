@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:24:07 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/20 15:01:10 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 21:49:03 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,13 @@
 
 int	main(void)
 {
+	std::cout << "=================================" << std::endl;
+	std::cout << "			Form OK :" << std::endl;
+	std::cout << "=================================" << std::endl;
 	try
 	{
 		Form	test("FirstForm", 150, 35);
-		std::cout << "it's ok!" << std::endl;
+		std::cout << test << std::endl;
 	}
 	catch (Form::GradeTooHighException e)
 	{
@@ -28,171 +31,72 @@ int	main(void)
 	{
 		std::cout << e.what() << std::endl;
 	}
-	// std::cout << test << std::endl;
 
+	std::cout << std::endl << "=================================" << std::endl;
+	std::cout << "	     Invalid grade (151):" << std::endl;
+	std::cout << "=================================" << std::endl;
+	try
+	{
+		Form	test2("FirstForm", 151, 35);
+		std::cout << test2 << std::endl;
+	}
+	catch (Form::GradeTooHighException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (Form::GradeTooLowException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 
+	std::cout << std::endl << std::endl << "=================================" << std::endl;
+	std::cout << "	       Invalid grade (0):" << std::endl;
+	std::cout << "=================================" << std::endl;
+	try
+	{
+		Form	test("FirstForm", 0, 35);
+		std::cout << test << std::endl;
+	}
+	catch (Form::GradeTooHighException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	catch (Form::GradeTooLowException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl;
 
-	
-	// std::cout << std::endl << "	Valid grade in declaration :" << std::endl;
-	// std::cout << "====================================" << std::endl << std::endl;
-	// Bureaucrat bureaucrat1("Bureaucrat1", 1);
-	// std::cout << bureaucrat1 << std::endl;
-	// try
-	// {
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-
-
-
-	// std::cout << std::endl << "	Unvalid grade in declaration (too low) :" << std::endl;
-	// std::cout << "================================================" << std::endl << std::endl;
-	// try
-	// {
-	// 	Bureaucrat bureaucrat2("Bureaucrat2", 0);
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl << std::endl;
-	// }
-
-
-
-	// std::cout << std::endl << "	Unvalid grade in declaration (too high) :" << std::endl;
-	// std::cout << "=================================================" << std::endl << std::endl;
-	// try
-	// {
-	// 	Bureaucrat bureaucrat3("Bureaucrat3", 151);
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl << std::endl;
-	// }
-
-
-
-	// std::cout << std::endl << "	Valid grade :" << std::endl;
-	// std::cout << "=====================" << std::endl << std::endl;
-	// Bureaucrat test1("BureaucratTest", 100);
-
-	// std::cout << test1 << std::endl;
-	// std::cout << "** Increment ** " << std::endl;
-	// try
-	// {
-	// 	test1.DecreaseBureaucrat();
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << test1 << std::endl;
-
-	// std::cout << "** Decrease **" << std::endl;
-	// try
-	// {
-	// 	test1.IncrementBureaucrat();
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << test1 << std::endl;
-
-
-
-	// std::cout << std::endl << "	Unvalid grade :" << std::endl;
-	// std::cout << "=======================" << std::endl << std::endl;
-	// Bureaucrat test2("BureaucratWrong", 150);
-
-	// std::cout << test2 << std::endl;
-	// std::cout << "** Increment ** " << std::endl;
-	// try
-	// {
-	// 	test2.DecreaseBureaucrat();
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << test2 << std::endl;
-
-	// std::cout << "** Decrease **" << std::endl;
-	// try
-	// {
-	// 	test2.IncrementBureaucrat();
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << test2 << std::endl;
-
-
-
-	// std::cout << std::endl << "	Unvalid grade :" << std::endl;
-	// std::cout << "=======================" << std::endl << std::endl;
-	// Bureaucrat test3("BureaucratWrong", 1);
-
-	// std::cout << test3 << std::endl;
-	// std::cout << "** Decrease **" << std::endl;
-	// try
-	// {
-	// 	test3.IncrementBureaucrat();
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << test3 << std::endl;
-
-	// std::cout << "** Increment ** " << std::endl;
-	// try
-	// {
-	// 	test3.DecreaseBureaucrat();
-	// }
-	// catch (Bureaucrat::GradeTooHighException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// catch (Bureaucrat::GradeTooLowException e)
-	// {
-	// 	std::cout << e.what() << std::endl;
-	// }
-	// std::cout << test3 << std::endl;
+	std::cout << std::endl << "=================================" << std::endl;
+	std::cout << "	       	 	    test:" << std::endl;
+	std::cout << "=================================" << std::endl << std::endl;
+	Bureaucrat	first("first", 140);
+	Bureaucrat	second("second", 3);
+	Form	form("FirstForm", 135, 35);
+	std::cout << std::endl << "before :" << std::endl << std::endl;
+	std::cout << first << form<< std::endl << std::endl;
+	try
+	{
+		first.signForm(form);
+	}
+	catch (Form::GradeTooLowException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl << "after :" << std::endl;
+	std::cout<< form<< std::endl;
+	std::cout << std::endl << "before :" << std::endl << std::endl;
+	std::cout << second << form<< std::endl;
+	try
+	{
+		second.signForm(form);
+	}
+	catch (Form::GradeTooLowException e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	std::cout << std::endl << std::endl << "after :" << std::endl;
+	std::cout << form<< std::endl;
 
 	return (0);
 }

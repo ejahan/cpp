@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 05:27:35 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/18 15:38:52 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 22:56:18 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ bool		Form::GetSigned(void) const
 	return (this->_signed);
 }
 
-// ici :
 void		Form::BeSigned(Bureaucrat const &bureaucrat)
 {
 	try
@@ -77,7 +76,6 @@ void		Form::BeSigned(Bureaucrat const &bureaucrat)
 	}
 }
 
-// ici :
 void		Form::execute(Bureaucrat const &executor) const
 {
 	try

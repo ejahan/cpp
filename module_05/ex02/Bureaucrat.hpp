@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:24:21 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 05:20:00 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 22:13:41 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include "Form.hpp"
+#include <stdlib.h>
 
 class	Form;
 

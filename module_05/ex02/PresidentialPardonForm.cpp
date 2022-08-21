@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 02:44:38 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 05:38:56 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 21:59:52 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ std::string	PresidentialPardonForm::GetTarget(void)
 
 void	PresidentialPardonForm::act(void) const
 {
-	std::cout << this->_target << " has been forgiven by  Zaphod Beeblebrox" << std::endl;
+	std::cout << this->_target << " has been forgiven by Zaphod Beeblebrox" << std::endl;
 	return ;
 }

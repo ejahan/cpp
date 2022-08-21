@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 21:23:18 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 01:17:56 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 21:47:33 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,13 @@ void	Bureaucrat::DecreaseBureaucrat(void)
 
 void		Bureaucrat::signForm(Form &form)
 {
-	std::cout << this->_name << " signed " << form.GetName() << std::endl;
+	if (this->_grade >= form.GetGradeSign())
+		std::cout << this->_name << " couldn't sign " << form.GetName() << " because of his grade (too low)" << std::endl;
+	else
+	{
+		std::cout << this->_name << " signed " << form.GetName() << std::endl;
+		form.BeSigned(*this);
+	}
 }
 
 Bureaucrat	&Bureaucrat::operator=(Bureaucrat const &src)

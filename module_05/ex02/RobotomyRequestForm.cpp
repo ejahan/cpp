@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 04:39:10 by ejahan            #+#    #+#             */
-/*   Updated: 2022/05/18 06:03:18 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/21 22:50:17 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,24 @@ std::string	RobotomyRequestForm::GetTarget(void)
 	return (this->_target);
 }
 
+int		random(int min, int max)
+{
+	static bool first = true;
+	if (first) {
+		srand( time(NULL) );
+		first = false;
+	}
+	return min + rand() % (( max + 1 ) - min);
+}
+
 void	RobotomyRequestForm::act(void) const
 {
-	/*
-	manque message une fois sur deux 
-	*/
-	std::cout << this->_target << " ** Drill sounds **" << std::endl;
+	int	i = random(1, 2);
+
+	std::cout << " ** Drill sounds **" << std::endl;
+	if (i == 1)
+		std::cout << this->_target << " has been robotomized with success!" << std::endl;
+	else
+		std::cout << " The operation failed..." << std::endl;
 	return ;
 }
