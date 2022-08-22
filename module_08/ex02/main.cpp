@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/16 21:17:07 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/18 14:28:30 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/23 00:40:38 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
-	// std::stack<int> s(mstack);
-
 
 
 	std::cout << std::endl << std::endl << "VECTOR TEST : " << std::endl << std::endl;
