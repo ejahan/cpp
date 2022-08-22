@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 19:22:16 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/22 02:42:14 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/22 17:48:51 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	main()
 	std::cout << "test->i : " << test->i << std::endl;
 	test->c = 'j';
 	test->i = 456;
-	std::cout << std::endl << "**change test->c** and test->i" << std::endl << std::endl;
+	std::cout << std::endl << "**change test->c and test->i**" << std::endl << std::endl;
 	std::cout << "test->c : " << test->c << std::endl;
 	std::cout << "test->i : " << test->i << std::endl;
 

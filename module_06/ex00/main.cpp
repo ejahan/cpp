@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 21:15:25 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/22 01:51:37 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/22 17:47:20 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,21 @@ void	from_int(int i)
 	std::cout << "double : " << static_cast<double>(i) << ".0" << std::endl;
 }
 
-void	from_float(float f)
+unsigned int	is_zero(std::string str)
+{
+	unsigned int i = str.find('.');
+
+	if (str.size() == i)
+		return (0);
+	i++;
+	while (str[i] == '0')
+		i++;
+	if (str.size() == i || str[i] == 'f')
+		return (0);
+	return (1);
+}
+
+void	from_float(float f, int i)
 {
 	if (static_cast<int>(f) < 32)
 		std::cout << "char : Non displayable" << std::endl;
@@ -65,11 +79,19 @@ void	from_float(float f)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << static_cast<int>(f) << std::endl;
-	std::cout << "float : " << f << "f" << std::endl;
-	std::cout << "double : " << static_cast<double>(f) << std::endl;
+	if (i == 0)
+	{
+		std::cout << "float : " << f << ".0f" << std::endl;
+		std::cout << "double : " << static_cast<double>(f) << ".0" << std::endl;
+	}
+	else
+	{
+		std::cout << "float : " << f << "f" << std::endl;
+		std::cout << "double : " << static_cast<double>(f) << std::endl;
+	}
 }
 
-void	from_double(double d)
+void	from_double(double d, int i)
 {
 	if (static_cast<int>(d) < 32)
 		std::cout << "char : Non displayable" << std::endl;
@@ -79,8 +101,16 @@ void	from_double(double d)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << static_cast<int>(d) << std::endl;
-	std::cout << "float : " << static_cast<float>(d) << "f" << std::endl;
-	std::cout << "double : " << d << std::endl;
+	if (i == 0)
+	{
+		std::cout << "float : " << static_cast<float>(d) << ".0f" << std::endl;
+		std::cout << "double : " << d << ".0" << std::endl;
+	}
+	else
+	{
+		std::cout << "float : " << static_cast<float>(d) << "f" << std::endl;
+		std::cout << "double : " << d << std::endl;
+	}
 }
 
 int	is_float(std::string str)
@@ -133,14 +163,14 @@ int	main(int ac, char **av)
 	else if (is_int(str) == 0)
 		from_int(std::atoi(str.c_str()));
 	else if (is_float(str) == 0)
-		from_float(std::atof(str.c_str()));
+		from_float(std::atof(str.c_str()), is_zero(str));
 	else if (is_float(str) == 1)
-		from_double(std::strtod(str.c_str(), NULL));
+		from_double(std::strtod(str.c_str(), NULL), is_zero(str));
 	else
 	{
 		std::cout << "ERROR" << std::endl;
 		return (1);
 	}
-
+	
 	return (0);
 }
