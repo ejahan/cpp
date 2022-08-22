@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:11:38 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/22 02:47:51 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/22 18:52:38 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ClassB.hpp"
 #include "ClassC.hpp"
 #include <stdlib.h>
-#include <typeinfo>
+// #include <typeinfo>
 
 int		random(int min, int max)
 {
@@ -81,7 +81,7 @@ void	identify(Base &p)
 		std::cout << "-> type A" << std::endl;
 		(void)a;
 	}
-	catch (std::bad_cast &e)
+	catch (std::exception &e)
 	{
 	}
 	try
@@ -90,7 +90,7 @@ void	identify(Base &p)
 		std::cout << "-> type B" << std::endl;
 		(void)b;
 	}
-	catch (std::bad_cast &e)
+	catch (std::exception &e)
 	{
 	}
 	try
@@ -99,7 +99,7 @@ void	identify(Base &p)
 		std::cout << "-> type C" << std::endl;
 		(void)c;
 	}
-	catch (std::bad_cast &e)
+	catch (std::exception &e)
 	{
 	}
 
