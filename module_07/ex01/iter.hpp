@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 12:48:11 by elisa             #+#    #+#             */
-/*   Updated: 2022/08/18 15:47:21 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/22 23:22:25 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 #include <iostream>
 
 template <typename T>
-void    print(T & nul)
+void    print_str(T const & str)
 {
-    std::cout << nul << std::endl;
+    std::cout << str << " -> ca marche" << std::endl;
 };
 
 template <typename T>
-void  iter(T * tab, unsigned int size, void f(T & t))
+void  iter(T * tab, unsigned int size, void f(T const & t))
 {
     unsigned int i = 0;
 

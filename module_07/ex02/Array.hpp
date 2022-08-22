@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/16 13:06:39 by elisa             #+#    #+#             */
-/*   Updated: 2022/08/18 15:57:31 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/22 23:43:39 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,14 @@ class	Array
 		{
 			int	i = rhs.size();
 
+			delete [] this->_array;
 			this->_array = new T[rhs._size];
 			this->_size = rhs.size();
-			while (i-- >= 0)
-				this->_array[i] = rhs._array[i];
+			while (i > 0)
+			{
+				this->_array[i - 1] = rhs._array[i - 1];
+				i--;
+			}
 			return (*this);
 		}
 
