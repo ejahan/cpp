@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 21:15:25 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/20 19:04:42 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/22 01:51:37 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ void	from_int(int i)
 	else
 		std::cout << "char : " << static_cast<char>(i) << std::endl;
 	std::cout << "int : " << i << std::endl;
-	std::cout << "float : " << static_cast<float>(i) << std::endl;
-	std::cout << "double : " << static_cast<double>(i) << std::endl;
+	std::cout << "float : " << static_cast<float>(i) << ".0f" << std::endl;
+	std::cout << "double : " << static_cast<double>(i) << ".0" << std::endl;
 }
 
 void	from_float(float f)
@@ -65,7 +65,7 @@ void	from_float(float f)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << static_cast<int>(f) << std::endl;
-	std::cout << "float : " << f << std::endl;
+	std::cout << "float : " << f << "f" << std::endl;
 	std::cout << "double : " << static_cast<double>(f) << std::endl;
 }
 
@@ -79,7 +79,7 @@ void	from_double(double d)
 		std::cout << "int : impossible" << std::endl;
 	else
 		std::cout << "int : " << static_cast<int>(d) << std::endl;
-	std::cout << "float : " << static_cast<float>(d) << std::endl;
+	std::cout << "float : " << static_cast<float>(d) << "f" << std::endl;
 	std::cout << "double : " << d << std::endl;
 }
 

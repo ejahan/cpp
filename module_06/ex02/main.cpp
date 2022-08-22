@@ -6,7 +6,7 @@
 /*   By: ejahan <ejahan@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/20 20:11:38 by ejahan            #+#    #+#             */
-/*   Updated: 2022/08/20 21:24:48 by ejahan           ###   ########.fr       */
+/*   Updated: 2022/08/22 02:47:51 by ejahan           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ClassB.hpp"
 #include "ClassC.hpp"
 #include <stdlib.h>
+#include <typeinfo>
 
 int		random(int min, int max)
 {
@@ -65,28 +66,51 @@ void	identify(Base *p)
 		{
 			C	*c = dynamic_cast<C*>(p);
 			if (c != NULL)
-				std::cout << "->type C" << std::endl;
+				std::cout << "-> type C" << std::endl;
 			else
 				std::cout << "ERROR : no type found" << std::endl;
 		}
 	}
-	// else if (B *b = dynamic_cast<B*>(p) != NULL)
-	// 	std::cout << "-> type B" << std::endl;
-	// else if (C *c = dynamic_cast<C*>(p) != NULL)
-	// 	std::cout << "->type C" << std::endl;
-	// else
-		// std::cout << "ERROR : no type found" << std::endl;
 }
 
-// void	identify(Base &p)
-// {	
-// }
+void	identify(Base &p)
+{
+	try
+	{
+		A &a = dynamic_cast<A &>(p);
+		std::cout << "-> type A" << std::endl;
+		(void)a;
+	}
+	catch (std::bad_cast &e)
+	{
+	}
+	try
+	{
+		B &b = dynamic_cast<B &>(p);
+		std::cout << "-> type B" << std::endl;
+		(void)b;
+	}
+	catch (std::bad_cast &e)
+	{
+	}
+	try
+	{
+		C &c = dynamic_cast<C &>(p);
+		std::cout << "-> type C" << std::endl;
+		(void)c;
+	}
+	catch (std::bad_cast &e)
+	{
+	}
+
+}
 
 int	main()
 {
 	Base	*base = generate();
 
 	identify(base);
+	identify(*base);
 	delete base;
 
 	return (0);
